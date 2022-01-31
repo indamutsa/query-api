@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  mongos:
+    container_name: mongos
+    image: mongo:4.2
+    command: mongos --configdb cfgrs/192.168.1.74:40001,192.168.1.74:40002,192.168.1.74:40003 --bind_ip 0.0.0.0 --port 27017
+    ports:
+      - 60000:27017
+
+  setuprouter:
+    container_name: setuprouter
+    build: .
+    depends_on:
+      - mongos
+    restart: "no"
+    entrypoint: ["bash", "-c", "sleep 5 && ./setupRouter.sh"]
