@@ -14,8 +14,8 @@ services:
     image: indamutsa/elasticsearch:v1.0
     volumes:
       - type: bind
-        source: ./elasticsearch/config/elasticsearch.yml
-        target: /usr/share/elasticsearch/config/elasticsearch.yml
+        source: ./elastic-bundle/elasticsearch/config/elasticsearch.yml
+        target: /usr/share/elastic-bundle/elasticsearch/config/elasticsearch.yml
         read_only: true
       - type: volume
         source: elasticsearch
@@ -39,11 +39,11 @@ services:
       - elasticsearch:elasticsearch
     volumes:
       - type: bind
-        source: ./logstash/config/logstash.yml
+        source: ./elastic-bundle/logstash/config/logstash.yml
         target: /usr/share/logstash/config/logstash.yml
         read_only: true
       - type: bind
-        source: ./logstash/pipeline
+        source: ./elastic-bundle/logstash/pipeline
         target: /usr/share/logstash/pipeline
         read_only: true
     ports:
@@ -65,7 +65,7 @@ services:
       - elasticsearch:elasticsearch
     volumes:
       - type: bind
-        source: ./kibana/config/kibana.yml
+        source: ./elastic-bundle/kibana/config/kibana.yml
         target: /usr/share/kibana/config/kibana.yml
         read_only: true
     ports:
@@ -74,13 +74,12 @@ services:
       - search-engine
     depends_on:
       - elasticsearch
-
   filebeat:
     container_name: filebeat
     image: indamutsa/filebeat:v1.0
     volumes:
-      - "$HOME/Project/school-projects/mdeforge/search-engine/test-filebeat:/logs"
-      - "$HOME/Project/school-projects/mdeforge/search-engine/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro"
+      - "$HOME/Project/school-projects/mdeforge/advanced-query-mechanisms/elastic-bundle/test-filebeat:/logs"
+      - "$HOME/Project/school-projects/mdeforge/advanced-query-mechanisms/elastic-bundle/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro"
       - "/var/lib/docker/containers:/usr/share/filebeat/dockerlogs:ro"
       - "/var/run/docker.sock:/var/run/docker.sock"
 
@@ -97,10 +96,11 @@ services:
     container_name: persistence
     build:
       context: ./persistence-api
-    image: indamutsa/persistence-api:v1.0
+    # image: indamutsa/persistence-api:v1.0
     command: node index.js
     ports:
       - "3200:3200"
+    restart: unless-stopped
     volumes:
       - ./persistence-api:/usr/src/app
       - /usr/src/app/node_modules
@@ -108,6 +108,19 @@ services:
       - "setup-rs"
     networks:
       - search-engine
+  # web:
+  #   container_name: web
+  #   image: indamutsa/sample-node-app:v1.0
+  #   command: node index.js
+  #   ports:
+  #     - "3200:3000"
+  #   volumes:
+  #     - ./mongo-bundle/web-app:/usr/src/app
+  #     - /usr/src/app/node_modules
+  #   depends_on:
+  #     - "setup-rs"
+  #   networks:
+  #     - search-engine
 
   mongo-rs0-1:
     container_name: mongo-rs0-1
@@ -174,8 +187,7 @@ services:
     #   context: ./monstache
     #   dockerfile: ./Dockerfile
     volumes:
-      - "$HOME/Project/school-projects/mdeforge/search-engine/monstache/monstache.config.toml:/app/monstache.config.toml"
-    depends_on:
+      - "$HOME/Project/school-projects/mdeforge/advanced-query-mechanisms/mongo-bundle/monstache/monstache.config.toml:/app/monstache.config.toml"
       - mongo-rs0-1
       - elasticsearch
     ports:
@@ -189,60 +201,6 @@ services:
       retries: 300
     restart: unless-stopped
 
-  # Mongo cluster  -- Sharded cluster
-  #################################################
-  # Mongos router
-  # mongos:
-  #   container_name: mongos
-  #   image: mongo:4.2
-  #   command: mongos --configdb cfgrs/192.168.1.74:40001,192.168.1.74:40002,192.168.1.74:40003 --bind_ip 0.0.0.0 --port 27017
-  #   ports:
-  #     - 60000:27017
-
-  # Configuration server
-  cfgsetup:
-    container_name: cfgsetup
-    build: .
-    depends_on:
-      - cfgsvr1
-    networks:
-      - search-engine
-    restart: "no"
-    entrypoint: ["bash", "-c", "sleep 5 && ./setupConfig.sh"]
-
-  cfgsvr1:
-    container_name: cfgsvr1
-    image: mongo:4.2
-    command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
-    ports:
-      - 40001:27017
-    networks:
-      - search-engine
-    volumes:
-      - cfgsvr1:/data/db
-
-  cfgsvr2:
-    container_name: cfgsvr2
-    image: mongo:4.2
-    command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
-    ports:
-      - 40002:27017
-    networks:
-      - search-engine
-    volumes:
-      - cfgsvr2:/data/db
-
-  cfgsvr3:
-    container_name: cfgsvr3
-    image: mongo:4.2
-    command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
-    ports:
-      - 40003:27017
-    networks:
-      - search-engine
-    volumes:
-      - cfgsvr3:/data/db
-
 # Defining the network
 ######################################################
 networks:
@@ -255,139 +213,3 @@ networks:
 
 volumes:
   elasticsearch:
-  # Configuration server
-  cfgsvr1: {}
-  cfgsvr2: {}
-  cfgsvr3: {}
-#   # Shard 1 cluster
-#   shard1svr1: {}
-#   shard1svr2: {}
-#   shard1svr3: {}
-#   # Shard 2 cluster
-#   shard2svr1: {}
-#   shard2svr2: {}
-#   shard2svr3: {}
-
-# Mongo cluster  -- Sharded cluster
-#################################################
-# Mongos router
-# mongos:
-#   container_name: mongos
-#   image: mongo:4.2
-#   command: mongos --configdb cfgrs/192.168.1.74:40001,192.168.1.74:40002,192.168.1.74:40003 --bind_ip 0.0.0.0 --port 27017
-#   ports:
-#     - 60000:27017
-
-# Configuration server
-# cfgsetup:
-#   container_name: cfgsetup
-#   build: .
-#   depends_on:
-#     - cfgsvr1
-#   networks:
-#     - search-engine
-#   restart: "no"
-#   entrypoint: ["bash", "-c", "sleep 5 && ./setupConfig.sh"]
-
-# cfgsvr1:
-#   container_name: cfgsvr1
-#   image: mongo:4.2
-#   command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
-#   ports:
-#     - 40001:27017
-#   networks:
-#     - search-engine
-#   volumes:
-#     - cfgsvr1:/data/db
-
-# cfgsvr2:
-#   container_name: cfgsvr2
-#   image: mongo:4.2
-#   command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
-#   ports:
-#     - 40002:27017
-#   networks:
-#     - search-engine
-#   volumes:
-#     - cfgsvr2:/data/db
-
-# cfgsvr3:
-#   container_name: cfgsvr3
-#   image: mongo:4.2
-#   command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
-#   ports:
-#     - 40003:27017
-#   networks:
-#     - search-engine
-#   volumes:
-#     - cfgsvr3:/data/db
-
-# Shard -1- Cluster configuration
-##################################
-# shard1svr1:
-#   container_name: shard1svr1
-#   image: mongo:4.2
-#   command: mongod --shardsvr --replSet shard1rs --port 27017 --dbpath /data/db
-#   ports:
-#     - 50001:27017
-#   networks:
-#     - search-engine
-#   volumes:
-#     - shard1svr1:/data/db
-
-# shard1svr2:
-#   container_name: shard1svr2
-#   image: mongo:4.2
-#   command: mongod --shardsvr --replSet shard1rs --port 27017 --dbpath /data/db
-#   ports:
-#     - 50002:27017
-#   networks:
-#     - search-engine
-#   volumes:
-#     - shard1svr2:/data/db
-
-# shard1svr3:
-#   container_name: shard1svr3
-#   image: mongo:4.2
-#   command: mongod --shardsvr --replSet shard1rs --port 27017 --dbpath /data/db
-#   ports:
-#     - 50003:27017
-#   networks:
-#     - search-engine
-#   volumes:
-#     - shard1svr3:/data/db
-
-# # Shard -2- Cluster configuration
-# ##################################
-# shard2svr1:
-#   container_name: shard2svr1
-#   image: mongo:4.2
-#   command: mongod --shardsvr --replSet shard2rs --port 27017 --dbpath /data/db
-#   ports:
-#     - 50004:27017
-#   networks:
-#     - search-engine
-#   volumes:
-#     - shard2svr1:/data/db
-
-# shard2svr2:
-#   container_name: shard2svr2
-#   image: mongo:4.2
-#   command: mongod --shardsvr --replSet shard2rs --port 27017 --dbpath /data/db
-#   ports:
-#     - 50005:27017
-#   networks:
-#     - search-engine
-#   volumes:
-#     - shard2svr2:/data/db
-
-# shard2svr3:
-#   container_name: shard2svr3
-#   image: mongo:4.2
-#   command: mongod --shardsvr --replSet shard2rs --port 27017 --dbpath /data/db
-#   ports:
-#     - 50006:27017
-#   networks:
-#     - search-engine
-#   volumes:
-#     - shard2svr3:/data/db

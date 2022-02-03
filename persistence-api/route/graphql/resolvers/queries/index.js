@@ -1,11 +1,11 @@
-import logger from "../../../../middleware/logger";
-import { Dsl } from "../../../../models/Dsl";
-import { Metamodel } from "../../../../models/Metamodel";
-import { Model } from "../../../../models/Model";
-import { Project } from "../../../../models/Project";
-import { User } from "../../../../models/User";
-import { Workspace } from "../../../../models/Workspace";
-import { UserList } from "../../../FakeData";
+const logger = require("../../../../middleware/logger");
+const { Dsl } = require("../../../../models/Dsl");
+const { Metamodel } = require("../../../../models/Metamodel");
+const { Model } = require("../../../../models/Model");
+const { Project } = require("../../../../models/Project");
+const { User } = require("../../../../models/User");
+const { Workspace } = require("../../../../models/Workspace");
+const { UserList } = require("../../../FakeData");
 
 const obj_ = (success, message, data) => {
   return {
@@ -15,7 +15,7 @@ const obj_ = (success, message, data) => {
   };
 };
 
-export const Query = {
+const Query = {
   user: async (parent, args, context, info) => {
     try {
       const user = await User.findOne({ username: args.username });
@@ -102,3 +102,5 @@ export const Query = {
     }
   },
 };
+
+module.exports = { Query };

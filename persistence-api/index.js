@@ -10,8 +10,8 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
-import { success, error } from "consola";
-import loadInitData from "./startup/loadInitData";
+const { success, error } = require("consola");
+const loadInitData = require("./startup/loadInitData");
 const { ApolloServer, gql } = require("apollo-server-express");
 const {
   ApolloServerPluginLandingPageGraphQLPlayground,

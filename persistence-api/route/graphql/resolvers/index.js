@@ -1,14 +1,14 @@
-import { Dsl } from "../../../models/Dsl";
-import { Metamodel } from "../../../models/Metamodel";
-import { Model } from "../../../models/Model";
-import { Project } from "../../../models/Project";
-import { User } from "../../../models/User";
-import { Workspace } from "../../../models/Workspace";
+const { Dsl } = require("../../../models/Dsl");
+const { Metamodel } = require("../../../models/Metamodel");
+const { Model } = require("../../../models/Model");
+const { Project } = require("../../../models/Project");
+const { User } = require("../../../models/User");
+const { Workspace } = require("../../../models/Workspace");
 
 const { Query } = require("./queries");
 // const { Mutation } = require("./mutations");
 
-export const resolvers = {
+const resolvers = {
   Query,
   //   mutations,
   ReturnedData: {
@@ -24,3 +24,5 @@ export const resolvers = {
     },
   },
 };
+
+module.exports = { resolvers };

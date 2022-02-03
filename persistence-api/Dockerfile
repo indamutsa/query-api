@@ -1,11 +1,10 @@
-FROM node:lts-alpine
+FROM node:14.18.1
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY package.json .
-RUN npm install
 COPY . .
-
+RUN yarn
 
 EXPOSE 3200
 
-CMD ["node", "index.js"]
+CMD ["npm", "run","start"]

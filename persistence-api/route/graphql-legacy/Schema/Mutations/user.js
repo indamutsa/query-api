@@ -1,9 +1,9 @@
-import { GraphQLString } from "graphql";
-import { MessageType, UserType } from "../TypeDefs";
-import { User } from "../../../../models/User";
-import logger from "../../../../middleware/logger";
+const { GraphQLString } = require("graphql");
+const { MessageType, UserType } = require("../TypeDefs");
+const { User } = require("../../../../models/User");
+const logger = require("../../../../middleware/logger");
 
-export const CREATE_USER = {
+const CREATE_USER = {
   type: MessageType,
   args: {
     username: { type: GraphQLString },
@@ -33,7 +33,7 @@ export const CREATE_USER = {
   },
 };
 
-export const DELETE_USER = {
+const DELETE_USER = {
   type: MessageType,
   args: {
     id: { type: GraphQLString },
@@ -56,7 +56,7 @@ export const DELETE_USER = {
   },
 };
 
-export const UPDATE_USER = {
+const UPDATE_USER = {
   type: MessageType,
   args: {
     id: { type: GraphQLString },
@@ -91,3 +91,5 @@ export const UPDATE_USER = {
     }
   },
 };
+
+module.exports = { CREATE_USER, UPDATE_USER, DELETE_USER };

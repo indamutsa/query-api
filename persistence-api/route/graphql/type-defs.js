@@ -1,5 +1,5 @@
-import { gql } from "apollo-server-express";
-export const typeDefs = gql`
+const { gql } = require("apollo-server-express");
+const typeDefs = gql`
   # schema.gql
   scalar GraphQLDateTime
 
@@ -93,3 +93,5 @@ export const typeDefs = gql`
 
   union ReturnedData = User | Workspace | Project | Metamodel | Model | Dsl
 `;
+
+module.exports = { typeDefs };

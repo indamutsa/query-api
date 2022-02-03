@@ -1,4 +1,4 @@
-import { WorkspaceType } from "./Workspace";
+const { WorkspaceType } = require("./Workspace");
 
 const {
   GraphQLObjectType,
@@ -9,7 +9,7 @@ const {
 } = require("graphql");
 const { GraphQLDateTime } = require("graphql-iso-date");
 
-export const UserType = new GraphQLObjectType({
+const UserType = new GraphQLObjectType({
   name: "User",
   description: "This schema represents a user",
   fields: () => ({
@@ -39,3 +39,5 @@ export const UserType = new GraphQLObjectType({
     },
   }),
 });
+
+module.exports = { UserType };

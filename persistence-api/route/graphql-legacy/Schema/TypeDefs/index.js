@@ -1,13 +1,13 @@
-import {
+const {
   GraphQLString,
   GraphQLBoolean,
   GraphQLObjectType,
   GraphQLUnionType,
-} from "graphql";
-import { User } from "../../../../models/User";
-import { ProjectType } from "./Project";
-import { UserType } from "./User";
-import { WorkspaceType } from "./Workspace";
+} = require("graphql");
+const { User } = require("../../../../models/User");
+const { ProjectType } = require("./Project");
+const { UserType } = require("./User");
+const { WorkspaceType } = require("./Workspace");
 
 const MessageType = new GraphQLObjectType({
   name: "Message",
@@ -20,4 +20,4 @@ const MessageType = new GraphQLObjectType({
   }),
 });
 
-export { UserType, MessageType };
+module.exports = { UserType, MessageType };

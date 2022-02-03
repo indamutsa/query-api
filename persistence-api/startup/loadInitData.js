@@ -1,8 +1,8 @@
-import { User } from "../models/User";
-import { Workspace } from "../models/Workspace";
-import { Project } from "../models/Project";
+const { User } = require("../models/User");
+const { Workspace } = require("../models/Workspace");
+const { Project } = require("../models/Project");
 
-export default async function loadInitData() {
+async function loadInitData() {
   await saveDefaultData();
 }
 
@@ -59,3 +59,5 @@ const saveDefaultProject = async (workspace) => {
     console.log(error);
   }
 };
+
+module.exports = loadInitData;

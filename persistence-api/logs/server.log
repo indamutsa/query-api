@@ -2185,3 +2185,86 @@ info: Jan-22-2022 09:55:40: 	Model uploaded successfully!
 info: Jan-22-2022 09:55:40: 	The operation was successful logged!
 info: Jan-22-2022 09:55:40: 	[22/Jan/2022:08:55:40 +0000] 'POST /store/operation HTTP/1.1' 200 315 '- Apache-HttpClient/4.5.13 (Java/11.0.11)' - 276.106 ms
 
+info: Feb-02-2022 14:25:18: 	Listening on port 3200...
+info: Feb-02-2022 14:25:18: 	Connected to database --> mdeforge ...
+info: Feb-02-2022 14:30:45: 	Listening on port 3200...
+info: Feb-02-2022 14:30:45: 	Connected to database --> mdeforge ...
+info: Feb-02-2022 15:51:58: 	Listening on port 3200...
+info: Feb-02-2022 15:54:02: 	Listening on port 3200...
+info: Feb-02-2022 15:54:02: 	Connected to database --> mdeforge ...
+info: Feb-02-2022 15:01:50: 	Listening on port 3200...
+info: Feb-02-2022 15:01:52: 	Connected to database --> mdeforge ...
+info: Feb-02-2022 15:14:34: 	[02/Feb/2022:15:14:34 +0000] 'GET /store/api-docs/ HTTP/1.1' 200 3102 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 6.139 ms
+
+info: Feb-02-2022 15:14:34: 	[02/Feb/2022:15:14:34 +0000] 'GET /store/api-docs/swagger-ui-init.js HTTP/1.1' 200 59814 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 1.943 ms
+
+info: Feb-02-2022 15:14:34: 	[02/Feb/2022:15:14:34 +0000] 'GET /store/api-docs/swagger-ui.css HTTP/1.1' 200 143858 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 12.411 ms
+
+info: Feb-02-2022 15:14:34: 	[02/Feb/2022:15:14:34 +0000] 'GET /store/api-docs/swagger-ui-standalone-preset.js HTTP/1.1' 200 324275 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 13.864 ms
+
+info: Feb-02-2022 15:14:34: 	[02/Feb/2022:15:14:34 +0000] 'GET /store/api-docs/swagger-ui-bundle.js HTTP/1.1' 200 1086481 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 11.803 ms
+
+info: Feb-02-2022 15:14:34: 	[02/Feb/2022:15:14:34 +0000] 'GET /store/api-docs/favicon-32x32.png HTTP/1.1' 200 628 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 1.283 ms
+
+info: Feb-02-2022 15:22:42: 	Listening on port 3200...
+info: Feb-02-2022 15:22:45: 	Connected to database --> mdeforge ...
+info: Feb-02-2022 15:23:17: 	[02/Feb/2022:15:23:17 +0000] 'GET /store/api-docs/ HTTP/1.1' 304 - '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 15.871 ms
+
+info: Feb-02-2022 15:23:17: 	[02/Feb/2022:15:23:17 +0000] 'GET /store/api-docs/swagger-ui-init.js HTTP/1.1' 304 - '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 3.326 ms
+
+info: Feb-02-2022 15:23:17: 	[02/Feb/2022:15:23:17 +0000] 'GET /store/api-docs/swagger-ui.css HTTP/1.1' 200 143858 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 26.422 ms
+
+info: Feb-02-2022 15:23:17: 	[02/Feb/2022:15:23:17 +0000] 'GET /store/api-docs/swagger-ui-standalone-preset.js HTTP/1.1' 200 324275 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 26.448 ms
+
+info: Feb-02-2022 15:23:17: 	[02/Feb/2022:15:23:17 +0000] 'GET /store/api-docs/swagger-ui-bundle.js HTTP/1.1' 200 1086481 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 20.243 ms
+
+info: Feb-02-2022 15:23:23: 	[02/Feb/2022:15:23:23 +0000] 'GET /store/api-docs/favicon-32x32.png HTTP/1.1' 200 628 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 1.734 ms
+
+info: Feb-02-2022 15:33:44: 	[02/Feb/2022:15:33:44 +0000] 'GET /store/api-docs/ HTTP/1.1' 304 - '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 2.058 ms
+
+info: Feb-02-2022 15:33:44: 	[02/Feb/2022:15:33:44 +0000] 'GET /store/api-docs/swagger-ui.css HTTP/1.1' 304 - '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 7.050 ms
+
+info: Feb-02-2022 15:33:44: 	[02/Feb/2022:15:33:44 +0000] 'GET /store/api-docs/swagger-ui-bundle.js HTTP/1.1' 304 - '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 9.220 ms
+
+info: Feb-02-2022 15:33:44: 	[02/Feb/2022:15:33:44 +0000] 'GET /store/api-docs/swagger-ui-init.js HTTP/1.1' 304 - '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 10.059 ms
+
+info: Feb-02-2022 15:33:44: 	[02/Feb/2022:15:33:44 +0000] 'GET /store/api-docs/swagger-ui-standalone-preset.js HTTP/1.1' 304 - '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 14.719 ms
+
+info: Feb-02-2022 15:33:45: 	[02/Feb/2022:15:33:45 +0000] 'GET /store/api-docs/favicon-32x32.png HTTP/1.1' 304 - '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 1.132 ms
+
+warn: Feb-02-2022 15:33:52: 	The user already exists!
+info: Feb-02-2022 15:33:52: 	[02/Feb/2022:15:33:52 +0000] 'POST /store/user HTTP/1.1' 404 26 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 7.640 ms
+
+info: Feb-03-2022 14:34:53: 	Listening on port 3200...
+info: Feb-03-2022 14:35:02: 	Connected to database --> mdeforge ...
+info: Feb-03-2022 14:38:17: 	Listening on port 3200...
+info: Feb-03-2022 14:38:26: 	Connected to database --> mdeforge ...
+info: Feb-03-2022 15:09:34: 	Listening on port 3200...
+error: Feb-03-2022 15:09:44: 	We got an unhandled rejection
+info: Feb-03-2022 15:09:50: 	Listening on port 3200...
+info: Feb-03-2022 15:09:50: 	Connected to database --> mdeforge ...
+info: Feb-03-2022 15:12:12: 	[03/Feb/2022:15:12:12 +0000] 'GET /store/api-docs/ HTTP/1.1' 304 - '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 20.702 ms
+
+info: Feb-03-2022 15:12:12: 	[03/Feb/2022:15:12:12 +0000] 'GET /store/api-docs/swagger-ui-init.js HTTP/1.1' 200 59814 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 7.839 ms
+
+info: Feb-03-2022 15:12:12: 	[03/Feb/2022:15:12:12 +0000] 'GET /store/api-docs/swagger-ui.css HTTP/1.1' 200 143858 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 27.580 ms
+
+info: Feb-03-2022 15:12:12: 	[03/Feb/2022:15:12:12 +0000] 'GET /store/api-docs/swagger-ui-standalone-preset.js HTTP/1.1' 200 324275 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 41.728 ms
+
+info: Feb-03-2022 15:12:12: 	[03/Feb/2022:15:12:12 +0000] 'GET /store/api-docs/swagger-ui-bundle.js HTTP/1.1' 200 1086481 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 38.068 ms
+
+info: Feb-03-2022 15:12:14: 	[03/Feb/2022:15:12:14 +0000] 'GET /store/api-docs/favicon-32x32.png HTTP/1.1' 200 628 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 3.353 ms
+
+info: Feb-03-2022 15:12:18: 	[03/Feb/2022:15:12:18 +0000] 'GET /store/api-docs/ HTTP/1.1' 304 - '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 1.098 ms
+
+info: Feb-03-2022 15:12:18: 	[03/Feb/2022:15:12:18 +0000] 'GET /store/api-docs/swagger-ui-bundle.js HTTP/1.1' 304 - '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 2.941 ms
+
+info: Feb-03-2022 15:12:18: 	[03/Feb/2022:15:12:18 +0000] 'GET /store/api-docs/swagger-ui-standalone-preset.js HTTP/1.1' 304 - '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 6.133 ms
+
+info: Feb-03-2022 15:12:18: 	[03/Feb/2022:15:12:18 +0000] 'GET /store/api-docs/swagger-ui-init.js HTTP/1.1' 304 - '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 16.043 ms
+
+info: Feb-03-2022 15:12:18: 	[03/Feb/2022:15:12:18 +0000] 'GET /store/api-docs/swagger-ui.css HTTP/1.1' 304 - '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 22.930 ms
+
+info: Feb-03-2022 15:16:13: 	User was created successfully!
+info: Feb-03-2022 15:16:13: 	[03/Feb/2022:15:16:13 +0000] 'POST /store/user HTTP/1.1' 200 230 '- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' - 25.931 ms
+

@@ -1,10 +1,10 @@
-import { GraphQLNonNull, GraphQLString } from "graphql";
-import { MessageType, UserType } from "../TypeDefs";
-import { User } from "../../../../models/User";
-import logger from "../../../../middleware/logger";
-import { Workspace } from "../../../../models/Workspace";
+const { GraphQLNonNull, GraphQLString } = require("graphql");
+const { MessageType, UserType } = require("../TypeDefs");
+const { User } = require("../../../../models/User");
+const logger = require("../../../../middleware/logger");
+const { Workspace } = require("../../../../models/Workspace");
 
-export const CREATE_WORKSPACE = {
+const CREATE_WORKSPACE = {
   type: MessageType,
   args: {
     name: { type: new GraphQLNonNull(GraphQLString) },
@@ -38,6 +38,8 @@ export const CREATE_WORKSPACE = {
     }
   },
 };
+
+module.exports = { CREATE_WORKSPACE };
 
 // export const DELETE_USER = {
 //   type: MessageType,

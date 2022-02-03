@@ -12,7 +12,9 @@ elasticsearch-urls = ["http://elasticsearch:9200"]
 # if you need to seed an index from a collection and not just listen and sync changes events
 # you can copy entire collections or views from MongoDB to Elasticsearch
 # direct-read-namespaces = ["test.kittens"]
-direct-read-namespaces = ["mdeforge.users","mdeforge.workspaces","mdeforge.projects","mdeforge.dsls","mdeforge.models","mdeforge.metamodels", "mdeforge.artifacts","mdeforge.transformations", "mdeforge.server_logs"]
+direct-read-namespaces = ["mdeforge.users","mdeforge.workspaces","mdeforge.projects","mdeforge.dsls","mdeforge.models","mdeforge.metamodels", "mdeforge.artifacts","mdeforge.server_logs"]
+
+
 
 # if you want to use MongoDB change streams instead of legacy oplog tailing use change-stream-namespaces
 # change streams require at least MongoDB API 3.6+

@@ -4,8 +4,8 @@
   "description": "MDEForge artefacts' persistence API",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -r esm index.js",
-    "server": "nodemon -r esm index.js",
+    "start": "nodemon index.js",
+    "server": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Arsene Indamutsa",
