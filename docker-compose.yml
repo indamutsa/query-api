@@ -168,7 +168,7 @@ services:
 
   adminmongo:
     container_name: adminmongo
-    image: mrvautin/adminmongo
+    image: indamutsa/adminmongo
     ports:
       - 9990:1234
     environment:
